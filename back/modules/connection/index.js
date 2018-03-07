@@ -6,7 +6,7 @@ import Mongoclient from 'mongodb';
 let app = express();
 // let _client = '';
 const url = 'mongodb://localhost:27017';
-const dbName = 'JWT';
+const dbName = 'vueProject';
 
 //Connect to Database
 let connection = () => {

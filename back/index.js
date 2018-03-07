@@ -1,7 +1,7 @@
 import express from 'express';
 import login from './modules/login/index';
 import users from './modules/users/index';
-import testing from './modules/testing/index';
+import list from './modules/list/index';
 import connection from './modules/connection/index';
 import bodyParser from 'body-parser';
 
@@ -23,7 +23,7 @@ connection()
 	}));
 	app.use('/users', users);
 	app.use('/login', login);
-	app.use('/testing', testing);
+	app.use('/list', list);
 	app.get('/' , (req, res) => {
 		res.status(200).send("Home is working")
 	});

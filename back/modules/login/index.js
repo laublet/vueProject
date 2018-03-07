@@ -5,7 +5,7 @@ import config from './config';
 
 let login = express.Router();
 let app = express();
-const dbName = 'JWT';
+const dbName = 'vueProject';
 
 app.set('superSecret', config.secret);
 
@@ -17,7 +17,7 @@ login.post('/test', function (req, res) {
 	var body = req.body;
 	if (body.username && body.password) {
 		var db = _client.db(dbName);
-		db.collection('test').find({username : body.username}).toArray(function(err, docs){
+		db.collection('users').find({username : body.username}).toArray(function(err, docs){
 			if (docs.length >0) {
 				let doc = docs[0];
 				if(doc.password == body.password) {
