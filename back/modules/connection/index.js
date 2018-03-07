@@ -1,27 +1,18 @@
 import express from 'express';
+import mongoose from 'mongoose'
 import login from '../login/index';
 import users from '../users/index';
-import Mongoclient from 'mongodb';
 
 let app = express();
-// let _client = '';
-const url = 'mongodb://localhost:27017';
-const dbName = 'vueProject';
 
+mongoose.Promise = global.Promise
 //Connect to Database
 let connection = () => {
-	let _client = '';
-	let app = express();
-	return new Promise ((resolve, reject) => {
-		return Mongoclient.connect(url,  (err, client) => {
-			if (err) console.log('Erro! ', err);
-			else {
-				console.log("Connected successfully to server");
-				_client = client;
-				return resolve(_client);
-			}
-		});
-	})
+	mongoose.connect(process.env.MONGOURL, {}, function (err) {
+  if (err) { throw err; } else {
+    console.log('Connection to the Database etablished (' + process.env.MONGOURL + ')...');
+  }
+})
 }
 
 export default connection;
