@@ -13,11 +13,12 @@ users.post('/', (req, res) => {
         let newUser = new User(req.body)
         newUser.hash_password = bcrypt.hashSync(req.body.password, 10)
         newUser.save(function (err, lol) {
+          console.log(lol);
           if (err) {
             res.status(400).json({success: false, message: err.message})
           } else {
             lol.hash_password = undefined
-            res.status(200).json({success: true, message: 'Tadaaa ! New user registerd', content: lol})
+            res.status(200).json({success: true, message: 'Tadaaa ! New user registed', content: lol})
           }
         })
       } else {

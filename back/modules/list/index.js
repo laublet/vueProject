@@ -12,8 +12,18 @@ list.get('/users' , (req, res) => {
 });
 
 list.get('/messages' , (req, res) => {
-	console.log(req.decode.email);
-		User.find({email: req.decode.email}, { messages: 1},(err, usersMessages) => {
+	// console.log(req.decode.email);
+		User.find({email: req.decode.email}, { message: 1},(err, usersMessages) => {
+			// console.log(usersMessages);
+		if (err) res.status(500).json({success: false, message: err.message})
+			else res.status(200).json({success: true, message: 'Here are your message!', content: usersMessages});
+	})
+});
+
+list.get('/messages/all' , (req, res) => {
+	// console.log(req.decode.email);
+		User.find({}, { message: 1},(err, usersMessages) => {
+			// console.log(usersMessages);
 		if (err) res.status(500).json({success: false, message: err.message})
 			else res.status(200).json({success: true, message: 'Here are your message!', content: usersMessages});
 	})

@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button v-on:click = "getListUSer">Get the user list</button>
-    <button v-on:click = "post"> <router-link to="/">accueil</router-link></button>
+    <!-- <button v-on:click = "getListUSer">Get the user list</button> -->
+    <router-link to="/">accueil</router-link>
   </div>
 </template>
 

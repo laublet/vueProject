@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input v-model="user.email" type="email" >
-    <input v-model="user.password" type="password" >
-    <button v-on:click = "post"> <router-link to="/">Accueil</router-link></button>
-    <button v-on:click = "post"> <router-link to="/signup">Signup</router-link></button>
+    <input v-model="user.email" type="email" placeholder="email">
+    <input v-model="user.password" type="password" placeholder="password">
+    <button v-on:click = "post"> Login</button>
+    <button> <router-link to="/">Accueil</router-link></button>
+    <button> <router-link to="/signup">Signup</router-link></button>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   name: 'login',
   data () {
     return {
-      msg: 'You are Logged',
+      msg: 'Log here !',
       user: {
         email: "",
         password: ""
@@ -29,6 +30,7 @@ export default {
         // console.log(data.body.content.token);
         let token = data.body.content.token;
         localStorage.setItem('Clef', token);
+        console.log(token);
         if (token) this.$router.push('/list')
         else this.$router.go('/');
       })

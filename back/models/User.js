@@ -15,7 +15,7 @@ let UserSchema = new mongoose.Schema({
     lowercase: true
   },
   hash_password: { type: String, required: true },
-  messages: {
+  message: {
     type: String,
   },
 });
