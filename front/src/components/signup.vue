@@ -35,8 +35,9 @@ export default {
         email: this.user.email,
         password: this.user.password,
         message: this.user.message
-      }).then(function(data){
-        console.log(data.body.content)
+      }).then(function(res){
+        if(res) this.$router.push('/')
+        else alert('You need to fill all the informations');
       })
     }
   }

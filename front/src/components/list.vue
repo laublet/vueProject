@@ -14,24 +14,11 @@ export default {
   data () {
     return {
       msg: 'You are Logged',
-      user: {
-        email: "",
-        password: ""
-      }
     }
   },
   methods: {
-    post:function () {
-      this.$http.post('http://localhost:8000/login', {
-        email: this.user.email,
-        password: this.user.password,
-      }).then(function(data){
-        // console.log(data.body.content.token);
-        let token = data.body.content.token;
-        localStorage.setItem('Clef', token);
-        if (token) this.$router.push('/gg')
-        else this.$router.go('/');
-      })
+    get:function () {
+
     }
   }
 }
