@@ -6,9 +6,10 @@ import User from './../../models/User'
 let users = express.Router();
 
 users.post('/', (req, res) => {
+  console.log(req.body);
   if (req.body.email && req.body.username &&req.body.password) {
-    User.findOne({ email: req.body.email}, function (err, result) {
-      if (result === null) {
+    User.findOne({ email: req.body.email}, function (err, bob) {
+      if (bob === null) {
         let newUser = new User(req.body)
         newUser.hash_password = bcrypt.hashSync(req.body.password, 10)
         newUser.save(function (err, lol) {

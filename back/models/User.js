@@ -18,8 +18,6 @@ let UserSchema = new mongoose.Schema({
   messages: {
     type: String,
   },
-  created: { type: Date, default: Date.now },
-  last_updated: { type: Date, default:Date.now }
 });
 
 UserSchema.methods.comparePasswords = function(password) {

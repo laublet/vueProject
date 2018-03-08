@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>Welcome to OurAwesomeApp</h1>
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import accueil from '@/components/accueil'
+import login from '@/components/login'
+import signup from '@/components/signup'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    accueil,
+    signup,
+    login
   }
 }
 </script>

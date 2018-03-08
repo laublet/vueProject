@@ -10,6 +10,7 @@ let checkToken = (req, res, next) => {
     jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRETKEY, function (err, decode) {
       if (err) res.status(500).json({success: false, message: err})
         else {
+          console.log(decode)
           req.decode = decode
           next()
         }

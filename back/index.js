@@ -30,7 +30,8 @@ app.use('/login', login);
 app.use(checkToken)
 app.use('/list', list);
 
+let host = process.env.HOST;
 let port = process.env.PORT || 8080;
-app.listen(port, () => console.log('App listen on port: ' + port + ' ...'))
+app.listen(port, () => console.log('App listen on port: ' + host + port))
 
 

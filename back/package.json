@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.babel.js",
-    "watch": "nodemon index.babel.js"
+    "watch": "nodemon index.babel.js",
+    "dev": ""
   },
   "author": "Han & Kas & Vinz",
   "license": "ISC",
