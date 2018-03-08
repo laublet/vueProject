@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Welcome to OurAwesomeApp</h1>
      <router-view></router-view>
   </div>
 </template>
@@ -9,12 +8,15 @@
 import accueil from '@/components/accueil'
 import login from '@/components/login'
 import signup from '@/components/signup'
+import list from '@/components/list'
+
 export default {
   name: 'App',
   components: {
     accueil,
     signup,
-    login
+    login,
+    list
   }
 }
 </script>

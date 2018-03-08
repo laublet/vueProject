@@ -1,16 +1,22 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input v-model="user.username" type="text" >
+    <div>
+      <label for="firstName">Username </label>
+      <input v-model="user.username" id="firstName" name="firstName" type="text" placeholder="Username" required><br><br>
+      <label for="email">Email </label>
+      <input v-model="user.email" id="email" name="email" type="email" placeholder="Email" required><br><br>
+      <label for="password">Password</label>
+      <input v-model="user.password" id="password" name="password" type="password" placeholder="password" required><br><br>
+      <label for="message">Message </label>
+      <input v-model="user.message" id="message" name="message" type="text" placeholder="message" required>
+    </div>
+   <!--  <input v-model="user.username" type="text" >
     <input v-model="user.email" type="email" >
     <input v-model="user.password" type="password" >
-    <input v-model="user.message" type="string" >
-    <p>Username: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Password: {{ user.password }}</p>
-    <p>Message: {{ user.message }}</p>
-    <button v-on:click = "post">Sign Up</button>
-    <router-link to="/">Accueil</router-link>
+    <input v-model="user.message" type="string" > -->
+    <button v-on:click = "post">Validate</button>
+    <button v-on:click = "post"><router-link to="/">Accueil</router-link></button>
   </div>
 </template>
 
@@ -37,7 +43,7 @@ export default {
         message: this.user.message
       }).then(function(res){
         if(res) this.$router.push('/')
-        else alert('You need to fill all the informations');
+          else alert('You need to fill all the informations');
       })
     }
   }

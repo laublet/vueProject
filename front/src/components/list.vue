@@ -1,26 +1,29 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input v-model="user.email" type="email" >
-    <input v-model="user.password" type="password" >
-    <button v-on:click = "post">Login</button>
-    <router-link to="/">Accueil</router-link>
+    <button v-on:click = "getListUSer">Get the user list</button>
+    <button v-on:click = "post"> <router-link to="/">accueil</router-link></button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'login',
+  name: 'list',
   data () {
     return {
-      msg: 'You are Logged',
+      msg: 'GG',
     }
   },
   methods: {
-    get:function () {
-
-    }
-  }
+  //   getListUSer:function () {
+  //     let localToken = localStorage.getItem('Clef');
+  //     console.log(localToken);
+  //     this.$http.get('http://localhost:8000/list/users', {headers: {'Authorization': localToken}
+  //   }).then(function(data){
+  //     console.log(data);
+  //   })
+  // }
+}
 }
 </script>
 
