@@ -12,7 +12,7 @@ export default {
   name: 'accueil',
   data () {
     return {
-      msg: 'Sign UP or Login'
+      msg: 'Signup or Login'
     }
   }
 }

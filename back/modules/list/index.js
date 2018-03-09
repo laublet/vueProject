@@ -4,9 +4,9 @@ import User from './../../models/User'
 let list = express.Router();
 
 list.get('/users' , (req, res) => {
-	// console.log(req.headers)
+	console.log('test')
 	User.find({}, {username: 1 , email: 1} ,(err, usersList) => {
-		if (err) res.status(500).json({success: false, message: err.message})
+		if (err) res.status(500).json({success: false, message: 'test'})
 			else res.status(200).json({success: true, message: 'Here is the list of users!', content: usersList});
 	})
 });

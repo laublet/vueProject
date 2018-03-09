@@ -8,6 +8,11 @@ import router from './router'
 Vue.use(VueResource)
 Vue.config.productionTip = false
 
+Vue.http.interceptors.push((request, next) => {
+  request.headers.set('Authorization', localStorage.getItem('Clef'))
+  console.log(request.headers);
+  next()
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

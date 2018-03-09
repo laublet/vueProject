@@ -1,35 +1,35 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <!-- <button v-on:click = "getListUSer">Get the user list</button> -->
+    <p>{{ list }}</p>
+    <button v-on:click = "getListUSer">Get the user list</button>
     <router-link to="/">accueil</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'list',
-  data () {
+  name: "list",
+  data() {
     return {
-      msg: 'GG',
-    }
+      list: {}
+    };
   },
   methods: {
-  //   getListUSer:function () {
-  //     let localToken = localStorage.getItem('Clef');
-  //     console.log(localToken);
-  //     this.$http.get('http://localhost:8000/list/users', {headers: {'Authorization': localToken}
-  //   }).then(function(data){
-  //     console.log(data);
-  //   })
-  // }
-}
-}
+    getListUSer: function() {
+      this.$http
+        .get("http://localhost:8000/list/users", {})
+        .then(function(res) {
+          this.list = res.data.content;
+        });
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
